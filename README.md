@@ -31,16 +31,16 @@ Test Continuous Integration/Delivery environment on AWS ECS.
 
 2. To download required plugins and modules run:
 
-    terraform init
+        terraform init
 
 3. To update dependencies run:
 
-    terraform get --update
+        terraform get --update
 
 4. To plan a deployment and check what is going to change run:
 
-    terraform plan
+        terraform plan
 
 5. To deploy changes run:
 
-    terraform apply
+        terraform apply
