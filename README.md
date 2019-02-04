@@ -1,12 +1,21 @@
 # CI-CD system on AWS ECS Fargate
 
-Test Continuous Integration/Delivery environment on AWS ECS Fargate.
+Test Continuous Integration/Delivery environment on AWS ECS.
+
+## Tools included
+
+* Jenkins
+    - Source Code: <https://github.com/jnonino/terraform-aws-jenkins>
+    - Terraform Module: <https://registry.terraform.io/modules/jnonino/jenkins/aws>
+* SonarQube
+    - Source Code: <https://github.com/jnonino/terraform-aws-sonarqube>
+    - Terraform Module: <https://registry.terraform.io/modules/jnonino/sonarqube/aws>
 
 ## Use this code as a Terraform module
-
+    
     module "ci-cd" {
-	    source = "jnonino/ci-cd-system/aws"
-
+        source              = "jnonino/ci-cd-system/aws"
+        version             = "1.0.0"
         name_preffix        = "${var.name_preffix}"
         profile             = "${var.profile}"
         region              = "${var.region}"
@@ -18,18 +27,20 @@ Test Continuous Integration/Delivery environment on AWS ECS Fargate.
 
 ## Deploy CI/CD Infrastructure standalone
 
-TO download required plugins and modules run:
+1. Clone this repository.
+
+2. To download required plugins and modules run:
 
     terraform init
 
-To update dependencies run:
+3. To update dependencies run:
 
-    terraform get -update
+    terraform get --update
 
-To plan a deployment and check what is going to change run:
+4. To plan a deployment and check what is going to change run:
 
     terraform plan
 
-To deploy changes run:
+5. To deploy changes run:
 
     terraform apply
