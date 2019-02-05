@@ -12,7 +12,11 @@ Test Continuous Integration/Delivery environment on AWS ECS.
     - Terraform Module: <https://registry.terraform.io/modules/jnonino/sonarqube/aws>
 
 ## Use this code as a Terraform module
-    
+
+Check valid versions on:
+* Github Releases: <https://github.com/jnonino/terraform-aws-ci-cd-system/releases>
+* Terraform Module Registry: <https://registry.terraform.io/modules/jnonino/ci-cd-system/aws>
+
     module "ci-cd" {
         source              = "jnonino/ci-cd-system/aws"
         version             = "1.0.0"
