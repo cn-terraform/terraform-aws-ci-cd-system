@@ -42,7 +42,7 @@ module "jenkins" {
 # ---------------------------------------------------------------------------------------------------------------------
 module "sonar" {
     source              = "jnonino/sonarqube/aws"
-    version             = "1.0.0"
+    version             = "1.1.0"
     #source              = "../terraform-aws-sonarqube"
     name_preffix        = "${var.name_preffix}"
     profile             = "${var.profile}"
