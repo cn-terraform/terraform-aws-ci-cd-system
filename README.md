@@ -2,6 +2,8 @@
 
 Test Continuous Integration/Delivery environment on AWS ECS.
 
+[![CircleCI](https://circleci.com/gh/jnonino/terraform-aws-ci-cd-system/tree/master.svg?style=svg)](https://circleci.com/gh/jnonino/terraform-aws-ci-cd-system/tree/master)
+
 ## Tools included
 
 * Jenkins
