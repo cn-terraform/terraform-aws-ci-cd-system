@@ -12,8 +12,8 @@ provider "aws" {
 module "networking" {
   source  = "jnonino/networking/aws"
   version = "2.0.1"
-
-  #source          = "../terraform-aws-networking"
+  #source = "../terraform-aws-networking"
+  
   name_preffix                                = var.name_preffix
   profile                                     = var.profile
   region                                      = var.region
@@ -29,8 +29,8 @@ module "networking" {
 module "jenkins" {
   source  = "jnonino/jenkins/aws"
   version = "2.0.0"
+  #source = "../terraform-aws-jenkins"
 
-  #source              = "../terraform-aws-jenkins"
   name_preffix        = var.name_preffix
   profile             = var.profile
   region              = var.region
@@ -45,8 +45,8 @@ module "jenkins" {
 module "sonar" {
   source  = "jnonino/sonarqube/aws"
   version = "2.0.0"
-
-  #source              = "../terraform-aws-sonarqube"
+  #source = "../terraform-aws-sonarqube"
+  
   name_preffix        = var.name_preffix
   profile             = var.profile
   region              = var.region
@@ -55,4 +55,3 @@ module "sonar" {
   public_subnets_ids  = [module.networking.public_subnets_ids]
   private_subnets_ids = [module.networking.private_subnets_ids]
 }
-
