@@ -11,7 +11,7 @@ provider "aws" {
 # ---------------------------------------------------------------------------------------------------------------------
 module "networking" {
   source  = "jnonino/networking/aws"
-  version = "2.0.1"
+  version = "2.0.3"
   #source = "../terraform-aws-networking"
   
   name_preffix                                = var.name_preffix
@@ -51,7 +51,7 @@ module "sonar" {
   profile             = var.profile
   region              = var.region
   vpc_id              = module.networking.vpc_id
-  availability_zones  = [var.availability_zones]
+  availability_zones  = [module.networking.availability_zones]
   public_subnets_ids  = [module.networking.public_subnets_ids]
   private_subnets_ids = [module.networking.private_subnets_ids]
 }
