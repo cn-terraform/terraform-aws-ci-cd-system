@@ -2,12 +2,12 @@
 
 Test Continuous Integration/Delivery environment on AWS ECS.
 
-[![CircleCI](https://circleci.com/gh/jnonino/terraform-aws-ci-cd-system/tree/master.svg?style=svg)](https://circleci.com/gh/jnonino/terraform-aws-ci-cd-system/tree/master)
-[![](https://img.shields.io/github/license/jnonino/terraform-aws-ci-cd-system)](https://github.com/jnonino/terraform-aws-ci-cd-system)
-[![](https://img.shields.io/github/issues/jnonino/terraform-aws-ci-cd-system)](https://github.com/jnonino/terraform-aws-ci-cd-system)
-[![](https://img.shields.io/github/issues-closed/jnonino/terraform-aws-ci-cd-system)](https://github.com/jnonino/terraform-aws-ci-cd-system)
-[![](https://img.shields.io/github/languages/code-size/jnonino/terraform-aws-ci-cd-system)](https://github.com/jnonino/terraform-aws-ci-cd-system)
-[![](https://img.shields.io/github/repo-size/jnonino/terraform-aws-ci-cd-system)](https://github.com/jnonino/terraform-aws-ci-cd-system)
+[![CircleCI](https://circleci.com/gh/cn-terraform/terraform-aws-ci-cd-system/tree/master.svg?style=svg)](https://circleci.com/gh/cn-terraform/terraform-aws-ci-cd-system/tree/master)
+[![](https://img.shields.io/github/license/cn-terraform/terraform-aws-ci-cd-system)](https://github.com/cn-terraform/terraform-aws-ci-cd-system)
+[![](https://img.shields.io/github/issues/cn-terraform/terraform-aws-ci-cd-system)](https://github.com/cn-terraform/terraform-aws-ci-cd-system)
+[![](https://img.shields.io/github/issues-closed/cn-terraform/terraform-aws-ci-cd-system)](https://github.com/cn-terraform/terraform-aws-ci-cd-system)
+[![](https://img.shields.io/github/languages/code-size/cn-terraform/terraform-aws-ci-cd-system)](https://github.com/cn-terraform/terraform-aws-ci-cd-system)
+[![](https://img.shields.io/github/repo-size/cn-terraform/terraform-aws-ci-cd-system)](https://github.com/cn-terraform/terraform-aws-ci-cd-system)
 
 ## Tools included
 
@@ -21,12 +21,12 @@ Test Continuous Integration/Delivery environment on AWS ECS.
 ## Use this code as a Terraform module
 
 Check valid versions on:
-* Github Releases: <https://github.com/jnonino/terraform-aws-ci-cd-system/releases>
-* Terraform Module Registry: <https://registry.terraform.io/modules/jnonino/ci-cd-system/aws>
+* Github Releases: <https://github.com/cn-terraform/terraform-aws-ci-cd-system/releases>
+* Terraform Module Registry: <https://registry.terraform.io/modules/cn-terraform/ci-cd-system/aws>
 
         module "ci-cd" {
-            source         = "jnonino/ci-cd-system/aws"
-            version        = "1.0.0"
+            source         = "cn-terraform/ci-cd-system/aws"
+            version        = "1.0.0-beta.4"
             name_preffix   = "cicd"
             profile        = "aws_profile"
             region         = "us-east-1"   
