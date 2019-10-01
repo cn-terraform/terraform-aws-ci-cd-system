@@ -12,11 +12,11 @@ Test Continuous Integration/Delivery environment on AWS ECS.
 ## Tools included
 
 * Jenkins
-    - Source Code: <https://github.com/jnonino/terraform-aws-jenkins>
-    - Terraform Module: <https://registry.terraform.io/modules/jnonino/jenkins/aws>
+    - Source Code: <https://github.com/cn-terraform/terraform-aws-jenkins>
+    - Terraform Module: <https://registry.terraform.io/modules/cn-terraform/jenkins/aws>
 * SonarQube
-    - Source Code: <https://github.com/jnonino/terraform-aws-sonarqube>
-    - Terraform Module: <https://registry.terraform.io/modules/jnonino/sonarqube/aws>
+    - Source Code: <https://github.com/cn-terraform/terraform-aws-sonarqube>
+    - Terraform Module: <https://registry.terraform.io/modules/cn-terraform/sonarqube/aws>
 
 ## Use this code as a Terraform module
 

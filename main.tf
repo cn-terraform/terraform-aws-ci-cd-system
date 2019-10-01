@@ -10,7 +10,7 @@ provider "aws" {
 # Base Infrastructure
 # ---------------------------------------------------------------------------------------------------------------------
 module "networking" {
-  source  = "jnonino/networking/aws"
+  source  = "cn-terraform/networking/aws"
   version = "2.0.3"
   #source = "../terraform-aws-networking"
   
@@ -27,8 +27,8 @@ module "networking" {
 # Jenkins
 # ---------------------------------------------------------------------------------------------------------------------
 module "jenkins" {
-  source  = "jnonino/jenkins/aws"
-  version = "2.0.0"
+  source  = "cn-terraform/jenkins/aws"
+  version = "2.0.1"
   #source = "../terraform-aws-jenkins"
 
   name_preffix        = var.name_preffix
@@ -43,8 +43,8 @@ module "jenkins" {
 # SonarQube
 # ---------------------------------------------------------------------------------------------------------------------
 module "sonar" {
-  source  = "jnonino/sonarqube/aws"
-  version = "2.0.0"
+  source  = "cn-terraform/sonarqube/aws"
+  version = "2.0.1"
   #source = "../terraform-aws-sonarqube"
   
   name_preffix        = var.name_preffix
