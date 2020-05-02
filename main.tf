@@ -42,16 +42,16 @@ module "jenkins" {
 # ---------------------------------------------------------------------------------------------------------------------
 # SonarQube
 # ---------------------------------------------------------------------------------------------------------------------
-# module "sonar" {
-#   # source  = "cn-terraform/sonarqube/aws"
-#   # version = "2.0.7"
-#   source = "../terraform-aws-sonarqube"
+module "sonar" {
+  source  = "cn-terraform/sonarqube/aws"
+  version = "2.0.7"
+  # source = "../terraform-aws-sonarqube"
 
-#   name_preffix        = var.name_preffix
-#   profile             = var.profile
-#   region              = var.region
-#   vpc_id              = module.networking.vpc_id
-#   availability_zones  = module.networking.availability_zones
-#   public_subnets_ids  = module.networking.public_subnets_ids
-#   private_subnets_ids = module.networking.private_subnets_ids
-# }
+  name_preffix        = var.name_preffix
+  profile             = var.profile
+  region              = var.region
+  vpc_id              = module.networking.vpc_id
+  availability_zones  = module.networking.availability_zones
+  public_subnets_ids  = module.networking.public_subnets_ids
+  private_subnets_ids = module.networking.private_subnets_ids
+}
