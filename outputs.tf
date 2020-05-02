@@ -53,4 +53,3 @@ output "jenkins_master_alb_zone_id" {
 #   description = "SonarQube Load Balancer Zone ID"
 #   value       = module.sonar.sonar_lb_zone_id
 # }
-
