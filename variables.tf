@@ -8,10 +8,6 @@ variable "name_preffix" {
 # ---------------------------------------------------------------------------------------------------------------------
 # AWS CREDENTIALS AND REGION
 # ---------------------------------------------------------------------------------------------------------------------
-variable "profile" {
-  description = "AWS API key credentials to use"
-}
-
 variable "region" {
   description = "AWS Region the infrastructure is hosted in"
 }
@@ -40,4 +36,3 @@ variable "private_subnets_cidrs_per_availability_zone" {
   type        = list
   description = "List of CIDRs to use on each availability zone for private subnets"
 }
-
