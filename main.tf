@@ -18,7 +18,7 @@ module "networking" {
 #------------------------------------------------------------------------------
 module "jenkins" {
   source  = "cn-terraform/jenkins/aws"
-  version = "2.0.7"
+  version = "2.0.8"
   # source = "../terraform-aws-jenkins"
 
   name_preffix        = var.name_preffix
@@ -33,7 +33,7 @@ module "jenkins" {
 #------------------------------------------------------------------------------
 module "sonar" {
   source  = "cn-terraform/sonarqube/aws"
-  version = "2.0.11"
+  version = "2.0.12"
   # source = "../terraform-aws-sonarqube"
 
   name_preffix        = var.name_preffix
@@ -49,7 +49,7 @@ module "sonar" {
 #------------------------------------------------------------------------------
 module "nexus" {
   source  = "cn-terraform/nexus/aws"
-  version = "1.0.4"
+  version = "1.0.5"
   # source = "../terraform-aws-nexus"
 
   name_preffix        = var.name_preffix
