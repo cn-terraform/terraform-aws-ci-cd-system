@@ -3,10 +3,10 @@
 #------------------------------------------------------------------------------
 module "networking" {
   source  = "cn-terraform/networking/aws"
-  version = "2.0.7"
+  version = "2.0.10"
   #source = "../terraform-aws-networking"
 
-  name_preffix                                = var.name_preffix
+  name_prefix                                 = var.name_prefix
   vpc_cidr_block                              = var.vpc_cidr_block
   availability_zones                          = var.availability_zones
   public_subnets_cidrs_per_availability_zone  = var.public_subnets_cidrs_per_availability_zone
@@ -18,10 +18,10 @@ module "networking" {
 #------------------------------------------------------------------------------
 module "jenkins" {
   source  = "cn-terraform/jenkins/aws"
-  version = "2.0.8"
+  version = "2.0.9"
   # source = "../terraform-aws-jenkins"
 
-  name_preffix        = var.name_preffix
+  name_prefix         = var.name_prefix
   region              = var.region
   vpc_id              = module.networking.vpc_id
   public_subnets_ids  = module.networking.public_subnets_ids
@@ -33,10 +33,10 @@ module "jenkins" {
 #------------------------------------------------------------------------------
 module "sonar" {
   source  = "cn-terraform/sonarqube/aws"
-  version = "2.0.13"
+  version = "2.0.16"
   # source = "../terraform-aws-sonarqube"
 
-  name_preffix        = var.name_preffix
+  name_prefix         = var.name_prefix
   region              = var.region
   vpc_id              = module.networking.vpc_id
   availability_zones  = module.networking.availability_zones
@@ -49,10 +49,10 @@ module "sonar" {
 #------------------------------------------------------------------------------
 module "nexus" {
   source  = "cn-terraform/nexus/aws"
-  version = "1.0.5"
+  version = "1.0.6"
   # source = "../terraform-aws-nexus"
 
-  name_preffix        = var.name_preffix
+  name_prefix         = var.name_prefix
   region              = var.region
   vpc_id              = module.networking.vpc_id
   availability_zones  = module.networking.availability_zones
