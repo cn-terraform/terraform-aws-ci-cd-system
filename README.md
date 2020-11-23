@@ -2,7 +2,7 @@
 
 Test Continuous Integration/Delivery environment on AWS ECS.
 
-[![CircleCI](https://circleci.com/gh/cn-terraform/terraform-aws-ci-cd-system.svg?style=svg)](https://circleci.com/gh/cn-terraform/terraform-aws-ci-cd-system)
+[![](https://github.com/cn-terraform/terraform-aws-ci-cd-system/workflows/terraform/badge.svg)](https://github.com/cn-terraform/terraform-aws-ci-cd-system/actions?query=workflow%3Aterraform)
 [![](https://img.shields.io/github/license/cn-terraform/terraform-aws-ci-cd-system)](https://github.com/cn-terraform/terraform-aws-ci-cd-system)
 [![](https://img.shields.io/github/issues/cn-terraform/terraform-aws-ci-cd-system)](https://github.com/cn-terraform/terraform-aws-ci-cd-system)
 [![](https://img.shields.io/github/issues-closed/cn-terraform/terraform-aws-ci-cd-system)](https://github.com/cn-terraform/terraform-aws-ci-cd-system)
