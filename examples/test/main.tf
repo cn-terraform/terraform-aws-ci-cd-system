@@ -1,7 +1,3 @@
-provider "aws" {
-  region = "us-east-1"
-}
-
 module "cicd" {
   source                                      = "../../"
   name_prefix                                 = "test-cicd"
