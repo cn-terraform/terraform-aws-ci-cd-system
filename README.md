@@ -43,3 +43,7 @@ Check valid versions on:
 5. To deploy changes run:
 
         terraform apply
+
+<!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
+
+<!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
