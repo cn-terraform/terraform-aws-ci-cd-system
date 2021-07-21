@@ -7,5 +7,5 @@ repos:
   - repo: https://github.com/gruntwork-io/pre-commit
     rev: v0.1.12
     hooks:
-      - id: terraform-validate
       - id: terraform-fmt
+      - id: terraform-validate
