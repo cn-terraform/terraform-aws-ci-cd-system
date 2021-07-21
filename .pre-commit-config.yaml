@@ -1,7 +1,11 @@
 repos:
-  - repo: git://github.com/antonbabenko/pre-commit-terraform
-    rev: v1.50.0
+  - repo: https://github.com/terraform-docs/terraform-docs
+    rev: v0.14.1
     hooks:
-      - id: terraform_fmt
-      - id: terraform_docs
-      
+      - id: terraform-docs-go
+        args: ["markdown", "."]
+  - repo: https://github.com/gruntwork-io/pre-commit
+    rev: v0.1.12
+    hooks:
+      - id: terraform-validate
+      - id: terraform-fmt
