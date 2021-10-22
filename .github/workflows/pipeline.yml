@@ -32,5 +32,26 @@ jobs:
         run: terraform init
         working-directory: examples/test
       - name: Terraform Plan (Mock)
-        run: terraform plan
+        run: terraform plan -out mock-plan.tfplan
         working-directory: examples/test
+
+  infracost:
+    runs-on: ubuntu-latest
+    container: hashicorp/terraform
+    name: Show infracost diff
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v2
+      - name: "Terraform show"
+        id: show
+        run: terraform show -json mock-plan.tfplan
+        working-directory: examples/test
+      - name: "Save Plan as JSON"
+        run: echo '${{ steps.show.outputs.stdout }}' > mock-plan.json
+      - name: Run infracost diff
+        uses: infracost/infracost-gh-action@master
+        env:
+          INFRACOST_API_KEY: ${{ secrets.INFRACOST_API_KEY }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          path: mock-plan.json
