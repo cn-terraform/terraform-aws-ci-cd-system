@@ -51,7 +51,7 @@ Pleas run this command right after cloning the repository.
         pre-commit install
 
 For that you may need to install the folowwing tools:
-* [Pre-commit](https://pre-commit.com/) 
+* [Pre-commit](https://pre-commit.com/)
 * [Terraform Docs](https://terraform-docs.io/)
 
 In order to run all checks at any point run the following command:
@@ -74,7 +74,7 @@ No providers.
 | Name | Source | Version |
 |------|--------|---------|
 | <a name="module_jenkins"></a> [jenkins](#module\_jenkins) | cn-terraform/jenkins/aws | 2.0.13 |
-| <a name="module_networking"></a> [networking](#module\_networking) | cn-terraform/networking/aws | 2.0.12 |
+| <a name="module_networking"></a> [networking](#module\_networking) | cn-terraform/networking/aws | 2.0.13 |
 | <a name="module_nexus"></a> [nexus](#module\_nexus) | cn-terraform/nexus/aws | 1.0.11 |
 | <a name="module_sonar"></a> [sonar](#module\_sonar) | cn-terraform/sonarqube/aws | 2.0.23 |
 
