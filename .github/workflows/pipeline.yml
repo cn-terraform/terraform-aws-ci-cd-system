@@ -52,6 +52,7 @@ jobs:
         uses: infracost/infracost-gh-action@master
         env:
           INFRACOST_API_KEY: ${{ secrets.INFRACOST_API_KEY }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           path: examples/test/mock-plan.tfplan
+	  repo-token: ${{ secrets.GITHUB_TOKEN }}
+
