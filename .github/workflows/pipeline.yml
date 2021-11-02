@@ -52,12 +52,10 @@ jobs:
         id: show
         run: terraform show -json mock-plan.tfplan
         working-directory: examples/test
-      - name: "Save Plan as JSON"
-        run: echo '${{ steps.show.outputs.stdout }}' > mock-plan.json
       - name: Run infracost diff
         uses: infracost/infracost-gh-action@master
         env:
           INFRACOST_API_KEY: ${{ secrets.INFRACOST_API_KEY }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          path: mock-plan.json
+          path: examples/test/mock-plan.tfplan
