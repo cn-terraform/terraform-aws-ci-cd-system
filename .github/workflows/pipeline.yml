@@ -32,7 +32,7 @@ jobs:
         run: terraform init
         working-directory: examples/test
       - name: Terraform Plan (Mock)
-        run: terraform plan -out mock-plan.tfplan
+        run: terraform plan
         working-directory: examples/test
 
   infracost:
@@ -44,6 +44,9 @@ jobs:
         uses: actions/checkout@v2
       - name: Terraform Init
         run: terraform init
+        working-directory: examples/test
+      - name: Terraform Plan (Mock)
+        run: terraform plan -out mock-plan.tfplan
         working-directory: examples/test
       - name: "Terraform show"
         id: show
