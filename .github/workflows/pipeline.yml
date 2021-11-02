@@ -42,6 +42,9 @@ jobs:
     steps:
       - name: Check out repository
         uses: actions/checkout@v2
+      - name: Terraform Init
+        run: terraform init
+        working-directory: examples/test
       - name: "Terraform show"
         id: show
         run: terraform show -json mock-plan.tfplan
