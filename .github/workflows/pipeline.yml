@@ -37,7 +37,7 @@ jobs:
 
   infracost:
     runs-on: ubuntu-latest
-    container: hashicorp/terraform
+    container: hashicorp/terraform:0.15.5
     name: Show infracost diff
     steps:
       - name: Check out repository
