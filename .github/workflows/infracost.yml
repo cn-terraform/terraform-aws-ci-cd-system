@@ -1,0 +1,16 @@
+name: Infracost
+on: [pull_request]
+jobs:
+  infracost:
+    runs-on: ubuntu-latest
+    name: Show infracost diff
+    steps:
+    - name: Check out repository
+      uses: actions/checkout@v2
+    - name: Run infracost diff
+      uses: infracost/infracost-gh-action@master
+      env:
+        INFRACOST_API_KEY: ${{ secrets.INFRACOST_API_KEY }}
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        path: examples/test
