@@ -63,7 +63,8 @@ In order to run all checks at any point run the following command:
 
 | Name | Version |
 |------|---------|
-| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 0.12 |
+| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 0.13 |
+| <a name="requirement_aws"></a> [aws](#requirement\_aws) | >= 4 |
 
 ## Providers
 
@@ -73,10 +74,10 @@ No providers.
 
 | Name | Source | Version |
 |------|--------|---------|
-| <a name="module_jenkins"></a> [jenkins](#module\_jenkins) | cn-terraform/jenkins/aws | 2.0.13 |
-| <a name="module_networking"></a> [networking](#module\_networking) | cn-terraform/networking/aws | 2.0.13 |
-| <a name="module_nexus"></a> [nexus](#module\_nexus) | cn-terraform/nexus/aws | 1.0.11 |
-| <a name="module_sonar"></a> [sonar](#module\_sonar) | cn-terraform/sonarqube/aws | 2.0.23 |
+| <a name="module_jenkins"></a> [jenkins](#module\_jenkins) | cn-terraform/jenkins/aws | 2.0.16 |
+| <a name="module_networking"></a> [networking](#module\_networking) | cn-terraform/networking/aws | 2.0.14 |
+| <a name="module_nexus"></a> [nexus](#module\_nexus) | cn-terraform/nexus/aws | 1.0.13 |
+| <a name="module_sonar"></a> [sonar](#module\_sonar) | cn-terraform/sonarqube/aws | 2.0.26 |
 
 ## Resources
 
