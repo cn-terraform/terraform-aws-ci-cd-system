@@ -49,7 +49,7 @@ module "sonar" {
 #------------------------------------------------------------------------------
 module "nexus" {
   source  = "cn-terraform/nexus/aws"
-  version = "1.0.13"
+  version = "1.0.14"
   # source = "../terraform-aws-nexus"
 
   name_prefix         = var.name_prefix
