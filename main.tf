@@ -33,7 +33,7 @@ module "jenkins" {
 #------------------------------------------------------------------------------
 module "sonar" {
   source  = "cn-terraform/sonarqube/aws"
-  version = "2.0.33"
+  version = "2.0.37"
   # source = "../terraform-aws-sonarqube"
 
   name_prefix         = var.name_prefix
@@ -42,6 +42,15 @@ module "sonar" {
   availability_zones  = module.networking.availability_zones
   public_subnets_ids  = module.networking.public_subnets_ids
   private_subnets_ids = module.networking.private_subnets_ids
+  enable_ssl          = false
+  lb_https_ports      = {}
+  lb_http_ports = {
+    default = {
+      listener_port         = 80
+      target_group_port     = 9000
+      target_group_protocol = "HTTP"
+    }
+  }
 }
 
 #------------------------------------------------------------------------------
