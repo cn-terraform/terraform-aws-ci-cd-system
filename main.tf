@@ -58,13 +58,12 @@ module "sonar" {
 #------------------------------------------------------------------------------
 module "nexus" {
   source  = "cn-terraform/nexus/aws"
-  version = "1.0.22"
+  version = "1.0.24"
   # source = "../terraform-aws-nexus"
 
   name_prefix         = var.name_prefix
   region              = var.region
   vpc_id              = module.networking.vpc_id
-  availability_zones  = module.networking.availability_zones
   public_subnets_ids  = module.networking.public_subnets_ids
   private_subnets_ids = module.networking.private_subnets_ids
 }
