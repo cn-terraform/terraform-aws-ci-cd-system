@@ -33,7 +33,7 @@ module "jenkins" {
 #------------------------------------------------------------------------------
 module "sonar" {
   source  = "cn-terraform/sonarqube/aws"
-  version = "2.0.40"
+  version = "2.0.41"
   # source = "../terraform-aws-sonarqube"
 
   name_prefix         = var.name_prefix
