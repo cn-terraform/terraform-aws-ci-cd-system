@@ -18,7 +18,7 @@ module "networking" {
 #------------------------------------------------------------------------------
 module "jenkins" {
   source  = "cn-terraform/jenkins/aws"
-  version = "2.0.26"
+  version = "2.0.27"
   # source = "../terraform-aws-jenkins"
 
   name_prefix         = var.name_prefix
