@@ -3,7 +3,7 @@
 #------------------------------------------------------------------------------
 module "networking" {
   source  = "cn-terraform/networking/aws"
-  version = "2.0.16"
+  version = "3.0.0"
   #source = "../terraform-aws-networking"
 
   name_prefix                                 = var.name_prefix
