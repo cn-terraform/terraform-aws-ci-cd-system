@@ -3,7 +3,7 @@
 #------------------------------------------------------------------------------
 module "networking" {
   source  = "cn-terraform/networking/aws"
-  version = "3.0.0"
+  version = "3.0.1"
   #source = "../terraform-aws-networking"
 
   cidr_block      = var.vpc_cidr_block
