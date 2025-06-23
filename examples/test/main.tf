@@ -3,7 +3,7 @@ module "cicd" {
   name_prefix    = "test-cicd"
   region         = "us-east-1"
   vpc_cidr_block = "192.168.0.0/16"
-  
+
   public_subnets = {
     first_public_subnet = {
       availability_zone = "us-east-1a"
