@@ -3,14 +3,12 @@
 #------------------------------------------------------------------------------
 module "networking" {
   source  = "cn-terraform/networking/aws"
-  version = "2.0.16"
+  version = "3.0.0"
   #source = "../terraform-aws-networking"
 
-  name_prefix                                 = var.name_prefix
-  vpc_cidr_block                              = var.vpc_cidr_block
-  availability_zones                          = var.availability_zones
-  public_subnets_cidrs_per_availability_zone  = var.public_subnets_cidrs_per_availability_zone
-  private_subnets_cidrs_per_availability_zone = var.private_subnets_cidrs_per_availability_zone
+  cidr_block      = var.vpc_cidr_block
+  public_subnets  = var.public_subnets
+  private_subnets = var.private_subnets
 }
 
 #------------------------------------------------------------------------------
@@ -24,8 +22,8 @@ module "jenkins" {
   name_prefix         = var.name_prefix
   region              = var.region
   vpc_id              = module.networking.vpc_id
-  public_subnets_ids  = module.networking.public_subnets_ids
-  private_subnets_ids = module.networking.private_subnets_ids
+  public_subnets_ids  = [for subnet in module.networking.public_subnets : subnet.id]
+  private_subnets_ids = [for subnet in module.networking.private_subnets : subnet.id]
 }
 
 #------------------------------------------------------------------------------
@@ -39,8 +37,8 @@ module "sonar" {
   name_prefix         = var.name_prefix
   region              = var.region
   vpc_id              = module.networking.vpc_id
-  public_subnets_ids  = module.networking.public_subnets_ids
-  private_subnets_ids = module.networking.private_subnets_ids
+  public_subnets_ids  = [for subnet in module.networking.public_subnets : subnet.id]
+  private_subnets_ids = [for subnet in module.networking.private_subnets : subnet.id]
   enable_ssl          = false
   lb_https_ports      = {}
   lb_http_ports = {
@@ -63,6 +61,6 @@ module "nexus" {
   name_prefix         = var.name_prefix
   region              = var.region
   vpc_id              = module.networking.vpc_id
-  public_subnets_ids  = module.networking.public_subnets_ids
-  private_subnets_ids = module.networking.private_subnets_ids
+  public_subnets_ids  = [for subnet in module.networking.public_subnets : subnet.id]
+  private_subnets_ids = [for subnet in module.networking.private_subnets : subnet.id]
 }

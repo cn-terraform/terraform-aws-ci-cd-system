@@ -12,11 +12,6 @@ variable "region" {
   description = "AWS Region the infrastructure is hosted in"
 }
 
-variable "availability_zones" {
-  type        = list(any)
-  description = "List of availability zones to be used by subnets"
-}
-
 #------------------------------------------------------------------------------
 # AWS Virtual Private Network
 #------------------------------------------------------------------------------
@@ -27,12 +22,18 @@ variable "vpc_cidr_block" {
 #------------------------------------------------------------------------------
 # AWS Subnets
 #------------------------------------------------------------------------------
-variable "public_subnets_cidrs_per_availability_zone" {
-  type        = list(any)
-  description = "List of CIDRs to use on each availability zone for public subnets"
+variable "public_subnets" {
+  type = map(object({
+    availability_zone = string # Availability Zone for the subnet.
+    cidr_block        = string # The IPv4 CIDR block for the subnet.
+  }))
+  description = "Map of objects contining the definition for each public subnet"
 }
 
-variable "private_subnets_cidrs_per_availability_zone" {
-  type        = list(any)
-  description = "List of CIDRs to use on each availability zone for private subnets"
+variable "private_subnets" {
+  type = map(object({
+    availability_zone = string # Availability Zone for the subnet.
+    cidr_block        = string # The IPv4 CIDR block for the subnet.
+  }))
+  description = "Map of objects contining the definition for each private subnet"
 }
