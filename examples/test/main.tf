@@ -1,6 +1,6 @@
 module "cicd" {
   source         = "../../"
-  name_prefix    = "test-cicd"
+  name_prefix    = "test"
   region         = "us-east-1"
   vpc_cidr_block = "192.168.0.0/16"
 
