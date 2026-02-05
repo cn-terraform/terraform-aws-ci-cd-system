@@ -33,9 +33,10 @@ jobs:
       - name: Set validation matrix
         id: set-matrix
         run: |
-          examples=$(find examples -maxdepth 1 -mindepth 1 -type d | sed 's|^./||' | sort)
-          json_array=$(echo "$examples" | jq -R . | jq -s .)
-          echo "matrix=$(echo -n "$json_array")" >> $GITHUB_OUTPUT
+          # Find all subdirectories in examples folder and convert to JSON array
+          DIRS=$(find examples -maxdepth 1 -mindepth 1 -type d | sort)
+          MATRIX=$(echo "$DIRS" | jq -R . | jq -s . | tr -d '\n')
+          echo "matrix=${MATRIX}" >> $GITHUB_OUTPUT
 
   validations:
     needs: discover-examples
