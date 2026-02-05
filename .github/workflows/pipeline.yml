@@ -31,7 +31,7 @@ jobs:
       - name: Set validation matrix
         id: set-matrix
         run: |
-          examples=$(find examples -maxdepth 1 -mindepth 1 -type d -printf "%f\n")
+          examples=$(find examples -maxdepth 1 -mindepth 1 -type d | sort)
           json=$(printf '%s\n' "${examples[@]}" | jq -R . | jq -s .)
           echo "matrix=$json" >> $GITHUB_OUTPUT
 
