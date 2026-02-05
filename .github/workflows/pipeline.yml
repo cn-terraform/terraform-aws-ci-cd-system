@@ -34,7 +34,7 @@ jobs:
         id: set-matrix
         run: |
           examples=$(find examples -maxdepth 1 -mindepth 1 -type d | sort | jq -R . | jq -s .)
-          echo "matrix=$json" >> $GITHUB_OUTPUT
+          echo "matrix=$examples" >> $GITHUB_OUTPUT
 
   validations:
     needs: discover-examples
