@@ -58,11 +58,11 @@ In order to run all checks at any point run the following command:
 
         pre-commit run --all-files
 
-<!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
+<!-- BEGIN_TF_DOCS -->
 ## Requirements
 
 | Name | Version |
-|------|---------|
+| ---- | ------- |
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 0.13 |
 | <a name="requirement_aws"></a> [aws](#requirement\_aws) | >= 4 |
 
@@ -73,11 +73,11 @@ No providers.
 ## Modules
 
 | Name | Source | Version |
-|------|--------|---------|
-| <a name="module_jenkins"></a> [jenkins](#module\_jenkins) | cn-terraform/jenkins/aws | 2.0.16 |
-| <a name="module_networking"></a> [networking](#module\_networking) | cn-terraform/networking/aws | 2.0.14 |
-| <a name="module_nexus"></a> [nexus](#module\_nexus) | cn-terraform/nexus/aws | 1.0.13 |
-| <a name="module_sonar"></a> [sonar](#module\_sonar) | cn-terraform/sonarqube/aws | 2.0.26 |
+| ---- | ------ | ------- |
+| <a name="module_jenkins"></a> [jenkins](#module\_jenkins) | cn-terraform/jenkins/aws | 2.0.41 |
+| <a name="module_networking"></a> [networking](#module\_networking) | cn-terraform/networking/aws | 3.0.1 |
+| <a name="module_nexus"></a> [nexus](#module\_nexus) | cn-terraform/nexus/aws | 2.0.16 |
+| <a name="module_sonar"></a> [sonar](#module\_sonar) | cn-terraform/sonarqube/aws | 2.0.62 |
 
 ## Resources
 
@@ -86,18 +86,17 @@ No resources.
 ## Inputs
 
 | Name | Description | Type | Default | Required |
-|------|-------------|------|---------|:--------:|
-| <a name="input_availability_zones"></a> [availability\_zones](#input\_availability\_zones) | List of availability zones to be used by subnets | `list(any)` | n/a | yes |
+| ---- | ----------- | ---- | ------- | :------: |
 | <a name="input_name_prefix"></a> [name\_prefix](#input\_name\_prefix) | Name prefix for resources on AWS | `any` | n/a | yes |
-| <a name="input_private_subnets_cidrs_per_availability_zone"></a> [private\_subnets\_cidrs\_per\_availability\_zone](#input\_private\_subnets\_cidrs\_per\_availability\_zone) | List of CIDRs to use on each availability zone for private subnets | `list(any)` | n/a | yes |
-| <a name="input_public_subnets_cidrs_per_availability_zone"></a> [public\_subnets\_cidrs\_per\_availability\_zone](#input\_public\_subnets\_cidrs\_per\_availability\_zone) | List of CIDRs to use on each availability zone for public subnets | `list(any)` | n/a | yes |
+| <a name="input_private_subnets"></a> [private\_subnets](#input\_private\_subnets) | Map of objects contining the definition for each private subnet | <pre>map(object({<br/>    availability_zone = string # Availability Zone for the subnet.<br/>    cidr_block        = string # The IPv4 CIDR block for the subnet.<br/>  }))</pre> | n/a | yes |
+| <a name="input_public_subnets"></a> [public\_subnets](#input\_public\_subnets) | Map of objects contining the definition for each public subnet | <pre>map(object({<br/>    availability_zone = string # Availability Zone for the subnet.<br/>    cidr_block        = string # The IPv4 CIDR block for the subnet.<br/>  }))</pre> | n/a | yes |
 | <a name="input_region"></a> [region](#input\_region) | AWS Region the infrastructure is hosted in | `any` | n/a | yes |
 | <a name="input_vpc_cidr_block"></a> [vpc\_cidr\_block](#input\_vpc\_cidr\_block) | AWS VPC CIDR Block | `any` | n/a | yes |
 
 ## Outputs
 
 | Name | Description |
-|------|-------------|
+| ---- | ----------- |
 | <a name="output_jenkins_master_alb_arn"></a> [jenkins\_master\_alb\_arn](#output\_jenkins\_master\_alb\_arn) | Jenkins Master Application Load Balancer ARN |
 | <a name="output_jenkins_master_alb_arn_suffix"></a> [jenkins\_master\_alb\_arn\_suffix](#output\_jenkins\_master\_alb\_arn\_suffix) | Jenkins Master Application Load Balancer ARN Suffix |
 | <a name="output_jenkins_master_alb_dns_name"></a> [jenkins\_master\_alb\_dns\_name](#output\_jenkins\_master\_alb\_dns\_name) | Jenkins Master Application Load Balancer DNS Name |
@@ -113,4 +112,4 @@ No resources.
 | <a name="output_sonar_lb_dns_name"></a> [sonar\_lb\_dns\_name](#output\_sonar\_lb\_dns\_name) | SonarQube Load Balancer DNS Name |
 | <a name="output_sonar_lb_id"></a> [sonar\_lb\_id](#output\_sonar\_lb\_id) | SonarQube Load Balancer ID |
 | <a name="output_sonar_lb_zone_id"></a> [sonar\_lb\_zone\_id](#output\_sonar\_lb\_zone\_id) | SonarQube Load Balancer Zone ID |
-<!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
+<!-- END_TF_DOCS -->
